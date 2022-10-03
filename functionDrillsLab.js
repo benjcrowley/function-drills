@@ -217,7 +217,7 @@ function printAllNames(array){
   }
 }
 printAllNames(namesArr)
-console.log(namesArr)
+// console.log(namesArr)
 ////////////////// PROBLEM 13 ////////////////////
 /*
   Create a function called thatsOdd that takes in a single argument (a number).
@@ -227,7 +227,15 @@ console.log(namesArr)
 */
 
 //CODE HERE
-
+function thatsOdd(num1){
+  if( num1 % 2 === 0){
+    return "That's not odd"
+  }else{
+    return "That is odd indeed!"
+  }
+}
+let oddChecker = thatsOdd(20)
+console.log(oddChecker)
 
 ////////////////// PROBLEM 14 ////////////////////
 
@@ -240,7 +248,9 @@ console.log(namesArr)
 */
 
 //CODE HERE
+const bestMovie = (movie) => movie + " is the best movie ever!"
 
+console.log(bestMovie("Shark Tale"))
 
 ////////////////// PROBLEM 15 ////////////////////
 let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
@@ -254,7 +264,19 @@ let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
 */
 
 //CODE HERE
-
+function bigOrSmall (arr){
+  let answers = []
+  for(let i = 0; i < arr.length; i++){
+    if (arr[i] <= 100){
+      answers.push("small")
+    }else{
+      answers.push("big")
+    }
+  }
+  return answers
+}
+let arrayEvaluator = bigOrSmall(bigOrSmallArray)
+// console.log(arrayEvaluator)
 
 ////////////////// PROBLEM 16 ////////////////////
 let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel']
@@ -265,7 +287,16 @@ let loser = 'Glimmer'
 */
 
 //CODE HERE
-
+function theEliminator(arr, name){
+  for (let i = 0; i < arr.length; i++){
+    if(arr[i] === name){
+      arr.splice(i,1)
+      i--
+    }
+  }
+  return arr
+}
+console.log(theEliminator(contestants, loser))
 
 ////////////////// PROBLEM 17 ////////////////////
 let sampleString = "Hi, my name is Kylo."
@@ -275,7 +306,9 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
+const upperFunc = (phrase) => phrase.toUpperCase()
 
+console.log(upperFunc(sampleString))
 
 ////////////////// PROBLEM 18 ////////////////////
 /*
@@ -287,7 +320,16 @@ let sampleString = "Hi, my name is Kylo."
   If it does, return 'email verified' and if doesn't, 
   return 'must provide a valid email address'
 */
-
+//CODE HERE
+function emailCheck(email){
+  let stringEmail = String(email)
+  if(stringEmail.includes('@')){
+    return 'email verified'
+  }else{
+    return 'must provide valid email'
+  }
+}
+console.log(emailCheck('benjcrowley@gmail.com'))
 ////////////////// PROBLEM 19 ////////////////////
 /*
   Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. Each chocolate frog costs 3 gold. Your function should take in a single parameter, which is the amount of gold you are willing to spend. Your function should return a total amount of chocolate frogs you were able to purchase.
