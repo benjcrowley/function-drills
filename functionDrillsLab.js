@@ -338,23 +338,48 @@ console.log(emailCheck('benjcrowley@gmail.com'))
 
 //CODE HERE
 
+function howManyFrogs(moneyAvailable){
+  return moneyAvailable / 3
+}
+let totalFrogs = Math.floor(howManyFrogs(35))
+console.log(totalFrogs)
 
 ////////////////// PROBLEM 20 ////////////////////
 /*
   You might have noticed a slight bug in the previous problem. If you were to pass in 4 gold, the function would return to you 1.3333... However, you can't really go to a store and by 1.333 products. You would just be able to purchase 1 product. Re-write the function you used in the previous problem (give it the same name, just add a 2 to the end of it) that fixes this bug. Invoke the function and store the returned value to a variable called `totalFrogs2`.
 */
 
-//CODE HERE
+//CODE HERE //ALREADY DID THAT! WHOOO!
+function howManyFrogs(moneyAvailable){
+  return moneyAvailable / 3
+}
+let totalFrogs2 = Math.floor(howManyFrogs(35))
+console.log(totalFrogs2)
 
 
 ////////////////// PROBLEM 21 ////////////////////
-let sampleArray = [0,1,2,3,4,7,5,6,8,9]
+let sampleArray = [0,1,2,3,4,5,7,6,8,9]
 /*
   Write a function that takes in an array of numbers as an argument. In the body of the function, write logic to determine if the array is in ascending order. The function should return true, if it is sorted in ascending order, false if it is not. Create a variable, `arrayIsAscending` and set it equal to your function invoked. Use the sample array to test this function.
 */
 
 //CODE HERE
-
+function ascendingArr(arr) {
+  let isAscending = false
+  // console.log(arr.length - 1) seeing if this is the right length
+  for(let i = 0; i < (arr.length - 1); i++){
+    // console.log(i,i+1) // tests to see what is going on with my iterator
+    if(arr[i] <= arr[ i + 1 ]){
+      isAscending = true
+      // console.log(isAscending) tests to see if the if statement is working
+    }else {
+      return false
+    }
+  }
+  return isAscending
+}
+let arrayIsAscending = ascendingArr(sampleArray)
+console.log(arrayIsAscending)
 
 ////////////////// PROBLEM 22 ////////////////////
 
@@ -378,13 +403,13 @@ function pond() {
 */
 
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = []
+let globalScope = ['duck']
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = []
+let bathroomScope = ['duck', 'rubberDuck', 'sailorDuck']
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = []
+let bathtubScope = ['duck', 'sailorDuck']
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = []
+let pondScope = ['duck', 'realDuck']
